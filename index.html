@@ -229,16 +229,18 @@
             // Show success message
             const submitBtn = event.target.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Thanks!';
-            submitBtn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+            submitBtn.textContent = "You're in!";
+            submitBtn.style.transform = 'scale(1.05)';
+            submitBtn.style.boxShadow = '0 15px 30px rgba(132, 250, 176, 0.4)';
             
             // Reset form
             event.target.reset();
             
-            // Reset button after 3 seconds
+            // Reset button after 3 seconds with smooth transition
             setTimeout(() => {
                 submitBtn.textContent = originalText;
-                submitBtn.style.background = 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)';
+                submitBtn.style.transform = 'scale(1)';
+                submitBtn.style.boxShadow = '0 10px 20px rgba(132, 250, 176, 0.3)';
             }, 3000);
             
             // Optional: You can also submit to Netlify here if needed
