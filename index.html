@@ -184,7 +184,6 @@
           method="POST" 
           data-netlify="true" 
           class="email-form"
-          onsubmit="handleSubmit(event)"
         >
           <input type="hidden" name="form-name" value="early-access">
   
@@ -220,31 +219,5 @@
             All sports coming soon - be the first to know when we launch!
         </div>
     </div>
-
-    <script>
-        function handleSubmit(event) {
-            const email = event.target.querySelector('.email-input').value;
-            
-            // Show success message
-            const submitBtn = event.target.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = "You're in!";
-            submitBtn.style.transform = 'scale(1.05)';
-            submitBtn.style.boxShadow = '0 15px 30px rgba(132, 250, 176, 0.4)';
-            
-            // Reset form
-            event.target.reset();
-            
-            // Reset button after 3 seconds with smooth transition
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.style.transform = 'scale(1)';
-                submitBtn.style.boxShadow = '0 10px 20px rgba(132, 250, 176, 0.3)';
-            }, 3000);
-            
-            // Let the form submit to Netlify (don't prevent default)
-            // The form will submit normally and Netlify will handle it
-        }
-    </script>
 </body>
 </html>
