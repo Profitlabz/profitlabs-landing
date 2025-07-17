@@ -184,9 +184,9 @@
           method="POST" 
           data-netlify="true" 
           class="email-form"
+          onsubmit="handleSubmit(event)"
         >
           <input type="hidden" name="form-name" value="early-access">
-          <input type="hidden" name="redirect" value="/thank-you.html">
   
           <input 
             type="email" 
@@ -196,7 +196,7 @@
             required
           >
           <button type="submit" class="submit-btn">Get Early Access</button>
-</form>
+        </form>
         
         <div class="features">
             <div class="feature">
@@ -226,11 +226,23 @@
             event.preventDefault();
             const email = event.target.querySelector('.email-input').value;
             
-            // Here you would typically send the email to your backend
-            alert(`Thanks for signing up! We'll notify ${email} when we launch.`);
+            // Show success message
+            const submitBtn = event.target.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Thanks!';
+            submitBtn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
             
             // Reset form
             event.target.reset();
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)';
+            }, 3000);
+            
+            // Optional: You can also submit to Netlify here if needed
+            // For now, we'll just show the success message
         }
     </script>
 </body>
