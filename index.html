@@ -223,7 +223,6 @@
 
     <script>
         function handleSubmit(event) {
-            event.preventDefault();
             const email = event.target.querySelector('.email-input').value;
             
             // Show success message
@@ -243,8 +242,8 @@
                 submitBtn.style.boxShadow = '0 10px 20px rgba(132, 250, 176, 0.3)';
             }, 3000);
             
-            // Optional: You can also submit to Netlify here if needed
-            // For now, we'll just show the success message
+            // Let the form submit to Netlify (don't prevent default)
+            // The form will submit normally and Netlify will handle it
         }
     </script>
 </body>
