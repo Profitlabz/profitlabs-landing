@@ -179,10 +179,24 @@
             Stop guessing. Start winning. Our AI models analyze millions of data points to give you the same insights that professional bettors use to beat the odds. Every single time.
         </p>
         
-        <form name="early-access" method="POST" data-netlify="true">
-            <input type="email" name="email" required>
-            <button type="submit">Get Early Access</button>
-        </form>
+        <form 
+          name="early-access" 
+          method="POST" 
+          data-netlify="true" 
+          class="email-form"
+        >
+          <input type="hidden" name="form-name" value="early-access">
+          <input type="hidden" name="redirect" value="/thank-you.html">
+  
+          <input 
+            type="email" 
+            name="email"
+            placeholder="Enter your email address" 
+            class="email-input" 
+            required
+          >
+          <button type="submit" class="submit-btn">Get Early Access</button>
+</form>
         
         <div class="features">
             <div class="feature">
